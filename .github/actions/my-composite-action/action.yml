@@ -26,3 +26,9 @@ runs:
     - name: Create a file to check
       shell: bash
       run: touch file_created_in_composite_action
+      
+    - name: Print a repo secret
+      shell: bash
+      run: echo ${{ secrets..SECRET_1 }}
+
+      
