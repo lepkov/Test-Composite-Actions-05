@@ -14,6 +14,7 @@ outputs:
 
 runs:
   using: 'composite'
+  shell: bash
   steps:
    # - name: Download artifacts
    #   uses: actions/download-artifact@v2
