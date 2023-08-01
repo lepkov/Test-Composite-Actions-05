@@ -14,13 +14,13 @@ outputs:
 
 runs:
   using: 'composite'
-    steps:
-     # - name: Download artifacts
-     #   uses: actions/download-artifact@v2
-     #   with:
-     #     name: ${{ inputs.ARTIFACT_NAME }}
-      - name: print ARTIFACT_NAME var
-        run: echo ${{ inputs.ARTIFACT_NAME  }}    
-      
-      - name: Check file structure in the reusable workflow
-        run: ls -lha
+  steps:
+   # - name: Download artifacts
+   #   uses: actions/download-artifact@v2
+   #   with:
+   #     name: ${{ inputs.ARTIFACT_NAME }}
+    - name: print ARTIFACT_NAME var
+      run: echo ${{ inputs.ARTIFACT_NAME  }}    
+    
+    - name: Check file structure in the reusable workflow
+      run: ls -lha
