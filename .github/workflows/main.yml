@@ -1,6 +1,6 @@
 name: Test repo and var pass to composite workflow
 # Being shown in actions right side
-run-name: Starter
+run-name: Composite Starter
 # Никаких -, только _
 env:
   VAR: "MAIN"
@@ -44,4 +44,4 @@ jobs:
     - name: Run My Composite Action
       uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
       with:
-        input-parameter: 'Custom input value'
+        input-parameter: ${{ inputs.ARTIFACT_NAME }}
