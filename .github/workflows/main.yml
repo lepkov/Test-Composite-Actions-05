@@ -34,17 +34,11 @@ jobs:
       
     - name: Check file structure inside the job
       run: ls -lha
-      
-#    - name: Create artifacts
-#      uses: actions/upload-artifact@v3
-#      with:
-#        name: ${{ inputs.ARTIFACT_NAME }}
-#        path: change_from_workflow
 
     - name: Run My Composite Action
       uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
       with:
         ARTIFACT_NAME: ${{ inputs.ARTIFACT_NAME }}
         
-    - name: Check file structure inside the job
+    - name: Check file structure after composite action
       run: ls -lha
