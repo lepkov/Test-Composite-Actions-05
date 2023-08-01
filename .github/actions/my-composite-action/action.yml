@@ -34,6 +34,9 @@ runs:
     - name: Create a file to check
       shell: bash
       run: touch file_created_in_composite_action
+
+    - name: Run My Nested Composite Action
+      uses: lepkov/Test-Composite-Actions-05/.github/actions/my-another_composite_action@main
       
 
 
