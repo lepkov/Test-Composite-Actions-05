@@ -44,4 +44,4 @@ jobs:
     - name: Run My Composite Action
       uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
       with:
-        input-parameter: ${{ inputs.ARTIFACT_NAME }}
+        ARTIFACT_NAME: ${{ inputs.ARTIFACT_NAME }}
