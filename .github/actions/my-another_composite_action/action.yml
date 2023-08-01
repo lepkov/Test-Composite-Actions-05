@@ -1,0 +1,10 @@
+# It could be named any name .yml, not only action
+name: 'Composite Runner2'
+description: 'Action from action'
+
+runs:
+  using: 'composite'  
+  steps:
+    - name: print ARTIFACT_NAME var
+      shell: bash
+      run: echo Hello from nested composite action!
