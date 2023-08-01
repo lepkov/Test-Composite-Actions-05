@@ -45,3 +45,6 @@ jobs:
       uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
       with:
         ARTIFACT_NAME: ${{ inputs.ARTIFACT_NAME }}
+        
+    - name: Check file structure inside the job
+      run: ls -lha
