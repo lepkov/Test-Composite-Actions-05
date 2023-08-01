@@ -21,7 +21,11 @@ runs:
   steps:
     - name: print ARTIFACT_NAME var
       shell: bash
-      run: echo ${{ inputs.ARTIFACT_NAME  }}    
+      run: echo ${{ inputs.ARTIFACT_NAME  }}
+
+    - name: Print a repo secret
+      shell: bash
+      run: touch ${{ inputs.SECRET_1 }}
     
     - name: Check file structure in the reusable workflow
       shell: bash
@@ -31,8 +35,6 @@ runs:
       shell: bash
       run: touch file_created_in_composite_action
       
-    - name: Print a repo secret
-      shell: bash
-      run: echo ${{ inputs.SECRET_1 }}
+
 
       
