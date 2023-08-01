@@ -13,15 +13,16 @@ outputs:
     description: 'A sample output parameter'
 
 runs:
-  using: 'composite'
-  shell: bash
+  using: 'composite'  
   steps:
    # - name: Download artifacts
    #   uses: actions/download-artifact@v2
    #   with:
    #     name: ${{ inputs.ARTIFACT_NAME }}
     - name: print ARTIFACT_NAME var
+      shell: bash
       run: echo ${{ inputs.ARTIFACT_NAME  }}    
     
     - name: Check file structure in the reusable workflow
+      shell: bash
       run: ls -lha
