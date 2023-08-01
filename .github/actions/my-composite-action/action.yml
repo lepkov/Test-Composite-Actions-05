@@ -29,6 +29,6 @@ runs:
       
     - name: Print a repo secret
       shell: bash
-      run: echo ${{ secrets..SECRET_1 }}
+      run: echo ${{ secrets.SECRET_1 }}
 
       
