@@ -7,6 +7,10 @@ inputs:
     description: 'A sample input parameter'
     required: true
     default: 'Default value if not provided'
+  SECRET_1:
+    description: 'A secret from the repo test'
+    required: true
+    default: 'I havent resolved a secret'
 
 outputs:
   output-parameter:
@@ -29,6 +33,6 @@ runs:
       
     - name: Print a repo secret
       shell: bash
-      run: echo ${{ secrets.SECRET_1 }}
+      run: echo ${{ inputs.SECRET_1 }}
 
       
