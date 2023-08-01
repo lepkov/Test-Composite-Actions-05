@@ -39,6 +39,7 @@ jobs:
       uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
       with:
         ARTIFACT_NAME: ${{ inputs.ARTIFACT_NAME }}
+        SECRET_1: ${{ secrets.SECRET_1 }}
         
     - name: Check file structure after composite action
       run: ls -lha
