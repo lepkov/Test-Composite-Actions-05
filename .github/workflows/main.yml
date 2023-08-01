@@ -1,18 +1,47 @@
-name: My Workflow
+name: Test repo and var pass to composite workflow
+# Being shown in actions right side
+run-name: Starter
+# Никаких -, только _
+env:
+  VAR: "MAIN"
 
-on:
-  push:
-    branches:
-      - main
-
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: true
+        default: "main"
+      ARTIFACT_NAME:
+        required: true
+        default: "my-artifact"
+        
 jobs:
-  build:
+  checkout_and_make_changes:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout from specified branch
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ inputs.branch }}
+        fetch-depth: 0
+        
+    - name: Create a file to check
+      run: touch file_created_during_workflow
+      
+    # Без него не работает передача артефакта
+    - name: Create a file to store artifact
+      run: touch change_from_workflow
+      
+    - name: Check file structure inside the job
+      run: ls -lha
+      
+#    - name: Create artifacts
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: ${{ inputs.ARTIFACT_NAME }}
+#        path: change_from_workflow
 
-      - name: Run My Composite Action
-        uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
-        with:
-          input-parameter: 'Custom input value'
+    - name: Run My Composite Action
+      uses: lepkov/Test-Composite-Actions-05/.github/actions/my-composite-action@main
+      with:
+        input-parameter: 'Custom input value'
