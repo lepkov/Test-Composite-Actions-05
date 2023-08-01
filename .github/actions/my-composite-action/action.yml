@@ -24,4 +24,5 @@ runs:
       run: ls -lha
 
     - name: Create a file to check
+      shell: bash
       run: touch file_created_in_composite_action
