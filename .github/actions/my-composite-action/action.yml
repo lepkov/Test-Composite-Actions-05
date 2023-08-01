@@ -15,10 +15,6 @@ outputs:
 runs:
   using: 'composite'  
   steps:
-   # - name: Download artifacts
-   #   uses: actions/download-artifact@v2
-   #   with:
-   #     name: ${{ inputs.ARTIFACT_NAME }}
     - name: print ARTIFACT_NAME var
       shell: bash
       run: echo ${{ inputs.ARTIFACT_NAME  }}    
@@ -26,3 +22,6 @@ runs:
     - name: Check file structure in the reusable workflow
       shell: bash
       run: ls -lha
+
+    - name: Create a file to check
+      run: touch file_created_in_composite_action
