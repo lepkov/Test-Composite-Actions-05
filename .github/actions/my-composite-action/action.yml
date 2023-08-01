@@ -25,7 +25,7 @@ runs:
 
     - name: Print a repo secret
       shell: bash
-      run: touch ${{ inputs.SECRET_1 }}
+      run: echo ${{ inputs.SECRET_1 }}
     
     - name: Check file structure in the reusable workflow
       shell: bash
